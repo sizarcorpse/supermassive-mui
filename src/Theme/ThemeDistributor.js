@@ -1,0 +1,54 @@
+export const ThemeDistributor = (theme) => ({
+  // #global
+  scui_link_underline_remove: {
+    textTransform: "none",
+    textDecoration: "none"
+  },
+  // #Header
+  scui_header_appbar: {
+    height: 50,
+    maxHeigth: 50,
+    borderBottom: "1px solid rgba(227,227,227,1)",
+    elevation: 0,
+    backgroundColor: "#f9f7f7"
+  },
+  scui_header_toolbar: {
+    height: 50,
+    maxHeigth: 50,
+    minHeight: 50
+  },
+  scui_header_cal_icon: {
+    height: 15,
+    width: 15,
+    margin: theme.spacing(1)
+  },
+  scui_header_iconbutton: {
+    height: 35,
+    width: 35,
+    padding: 0
+  },
+  scui_header_reaction_icon: {
+    height: 25,
+    width: 25
+  },
+
+  // #Nav
+
+  scui_nav_appbar: {
+    height: 117,
+    maxHeigth: 117,
+    borderBottom: "1px solid rgba(227,227,227,1)",
+    elevation: 0,
+    backgroundColor: "#f9f7f7"
+  },
+  scui_nav_toolbar: {
+    height: 117,
+    maxHeigth: 117,
+    minHeight: 117
+  },
+  scui_nav_onhover: {
+    "&:hover": {
+      color: "#fc415e"
+    }
+  }
+});
