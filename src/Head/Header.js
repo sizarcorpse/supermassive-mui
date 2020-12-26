@@ -19,6 +19,7 @@ import {
   Tooltip
 } from "@material-ui/core";
 import DateRangeIcon from "@material-ui/icons/DateRange";
+import CloseIcon from "@material-ui/icons/Close";
 import SearchIcon from "@material-ui/icons/Search";
 import Angry from "../assets/angry.svg";
 import Care from "../assets/care.svg";
@@ -29,7 +30,7 @@ import Wow from "../assets/wow.svg";
 import Like from "../assets/like.svg";
 
 const Home = (props) => {
-  const { classes } = props;
+  const { classes, closeMe, handleNavSmallModalClose } = props;
 
   return (
     <Grid container component="main">
@@ -222,7 +223,16 @@ const Home = (props) => {
               alignItems="center"
               p={1}
             >
-              <SearchIcon color="primary" />
+              {closeMe === true ? (
+                <CloseIcon
+                  color="primary"
+                  onClick={() => {
+                    handleNavSmallModalClose(false);
+                  }}
+                />
+              ) : (
+                <SearchIcon color="primary" />
+              )}
             </Box>
           </Grid>
         </Toolbar>

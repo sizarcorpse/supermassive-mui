@@ -50,5 +50,26 @@ export const ThemeDistributor = (theme) => ({
     "&:hover": {
       color: "#fc415e"
     }
+  },
+
+  // Nav small
+
+  scui_box_grid: {
+    border: "1px solid pink",
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(633px, 1fr))"
+  },
+  ScuiSkillCard: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    fontSize: "3rem",
+    color: "#fff",
+    height: "100%",
+    width: "100%",
+    border: "1px solid pink",
+    transition: "all 500ms",
+    overflow: "hidden"
   }
 });

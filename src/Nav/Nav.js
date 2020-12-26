@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
+
+import NavSmall from "./NavSmall";
+
 import { ThemeDistributor } from "../Theme/ThemeDistributor";
 import {
   withStyles,
@@ -18,9 +21,12 @@ import {
   Tooltip,
   MenuItem,
   Menu,
-  Avatar
+  Avatar,
+  Modal,
+  Fade,
+  Backdrop
 } from "@material-ui/core";
-
+import MenuIcon from "@material-ui/icons/Menu";
 const Nav = (props) => {
   const { classes } = props;
 
@@ -32,6 +38,17 @@ const Nav = (props) => {
   };
   const handleCategoryMenuClose = () => {
     setCategoryMenuOpen(null);
+  };
+
+  // #action modal
+  const [navSmallModalOpen, setNavSmallModalOpen] = React.useState(false);
+
+  const handleNavSmallModalOpen = () => {
+    setNavSmallModalOpen(true);
+  };
+
+  const handleNavSmallModalClose = () => {
+    setNavSmallModalOpen(false);
   };
 
   return (
@@ -90,7 +107,7 @@ const Nav = (props) => {
                       className={classes.scui_nav_menu}
                       anchorEl={categoryMenuOpen}
                       keepMounted
-                      open={Boolean(categoryMenuOpen)}
+                      navSmallModalOepn={Boolean(categoryMenuOpen)}
                       onClose={handleCategoryMenuClose}
                     >
                       <MenuItem
@@ -216,15 +233,33 @@ const Nav = (props) => {
                   alignItems="center"
                   justifyContent="flex-end"
                 >
-                  <Avatar> </Avatar>
+                  <IconButton onClick={handleNavSmallModalOpen}>
+                    <MenuIcon />
+                  </IconButton>
                 </Box>
+                <Modal
+                  className={classes.modal}
+                  open={navSmallModalOpen}
+                  onClose={handleNavSmallModalClose}
+                  closeAfterTransition
+                  BackdropComponent={Backdrop}
+                  BackdropProps={{
+                    timeout: 500
+                  }}
+                >
+                  <Fade in={navSmallModalOpen}>
+                    <NavSmall
+                      handleNavSmallModalClose={handleNavSmallModalClose}
+                    />
+                  </Fade>
+                </Modal>
               </Box>
             </Grid>
 
             <Grid item xs={4} sm={4} md={3} lg={2} xl={2}>
               <Box display="flex" justifyContent="center" alignItems="center">
                 <Box display="flex" alignItems="center" mx={2}>
-                  <Avatar> </Avatar>
+                  <Avatar src="https://w.wallhaven.cc/full/j3/wallhaven-j38xpq.jpg"></Avatar>
                 </Box>
                 <Box display="flex" alignItems="center">
                   <Typography variant="h1" color="primary">
