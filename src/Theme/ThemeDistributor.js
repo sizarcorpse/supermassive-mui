@@ -71,5 +71,14 @@ export const ThemeDistributor = (theme) => ({
     border: "1px solid pink",
     transition: "all 500ms",
     overflow: "hidden"
+  },
+
+  // components => card
+
+  scui_card_gp: {
+    width: 405,
+    maxWidth: 405,
+    heigth: 500,
+    maxHeigth: 920
   }
 });

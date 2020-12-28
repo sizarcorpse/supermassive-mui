@@ -35,7 +35,13 @@ const theme = createMuiTheme({
       fontVariant: "normal",
       textTransform: "capitalize"
     },
-    h3: {},
+    h3: {
+      fontSize: 24,
+      fontWeight: 700,
+      fontStyle: "normal",
+      fontVariant: "normal",
+      textTransform: "capitalize"
+    },
     h4: {},
     h5: {},
     h6: {},
