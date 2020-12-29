@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
 import { ThemeDistributor } from "../Theme/ThemeDistributor";
+
 import {
   withStyles,
   CssBaseline,
@@ -34,13 +35,22 @@ import Like from "../assets/like.svg";
 
 const GCard = (props) => {
   const { classes, closeMe, handleNavSmallModalClose } = props;
-
   return (
-    <Box>
+    <Box mx={10}>
       <Card className={classes.scui_card_gp}>
         <Box>
-          <Box>media</Box>
-          <Box>cat</Box>
+          <Box display="flex" alignItems="flex-start" m={3}>
+            <Button variant="contained">sizar</Button>
+            <Button variant="contained">corpse</Button>
+          </Box>
+          {/* <Box>
+            <img
+              className={classes.scui_card_gp_photo}
+              src="https://w.wallhaven.cc/full/j3/wallhaven-j38gm5.jpg"
+              alt=""
+              title="Paella dish"
+            />
+          </Box> */}
         </Box>
         <Box>
           <Box>ava</Box>

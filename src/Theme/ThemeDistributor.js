@@ -80,5 +80,11 @@ export const ThemeDistributor = (theme) => ({
     maxWidth: 405,
     heigth: 500,
     maxHeigth: 920
+  },
+  scui_card_gp_photo: {
+    maxWidth: "405px",
+    width: "auto",
+    height: "auto",
+    opacity: 0.5
   }
 });
